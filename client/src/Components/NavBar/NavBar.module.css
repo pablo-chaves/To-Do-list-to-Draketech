@@ -1,22 +1,23 @@
 .ctn{
-  position: fixed;
+  /* position: fixed; */
   margin: 0;
-  background-color: rgb(18, 17, 16);
+  background-color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 60px;
+  box-shadow: 2px 2px 5px 3px var(--blackShadow);
 }
-.navPoke{
+.navTodo{
   width: 30%;
   height: 100%;
 }
-.imgPoke{
+.imgTodo{
   margin: 2px 20px 0 40px;
-  height: 90%;
+  height: 80%;
 }
-.imgPoke:hover{
+.imgTodo:hover{
   height: 95%;
 }
 .divH3{
@@ -28,7 +29,10 @@
 }
 a{
   text-decoration: none;
-  color: white;
+  color: var(--blue);
+}
+.h3{
+  font-size: 100%;;
 }
 
 @media only screen and (max-width: 900px) {

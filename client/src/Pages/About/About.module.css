@@ -1,7 +1,9 @@
 .aboutUsContainer{
     width: 100vw;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     text-align: center;
+    background-color: var(--gray);
+    padding: 10px;
 }
 
 .cardscontainer {

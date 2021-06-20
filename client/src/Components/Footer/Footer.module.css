@@ -2,7 +2,7 @@
     align-self: flex-end;
     display: flex;
     flex-direction: column;
-    background-color: var(--dark);
+    background-color: var(--blue);
     justify-content: center;
     align-items: center;
     padding: 25px;

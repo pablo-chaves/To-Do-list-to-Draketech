@@ -20,7 +20,7 @@ const About = () => {
     return (
         <div className={style.aboutUsContainer}>
             <div className={style.titleAboutUs}>About</div>
-            <div className={style.descriptionAboutUs}>To-Do App is an application developed with the following technologies: React, Redux, HTML, CSS, NodeJS, Express, Sequelize, Postgres, Typescript, JWT.
+            <div className={style.descriptionAboutUs}>To-Do App is an application developed with the following technologies: React, Redux, HTML, CSS, NodeJS, Express, Sequelize, Postgres, Typescript, JWT, Axios and bootstrap 4.
             </div>
             <div className={style.cardscontainer}>
             {

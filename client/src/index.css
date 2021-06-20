@@ -1,0 +1,95 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  /* align-content: center;
+  justify-content: center; */
+}
+
+html {
+  height:100vh;
+  overflow-y: scroll;
+  width: 100%
+}
+
+body {
+  background-color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  /* width: 100%; */
+}
+
+.app {
+  margin: 0px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.soyYo{
+  width: 100%;
+}
+:root {
+  --blackShadow: #00000049;
+  --gray: ;
+  --black: #060606;
+  --dark: #0F1A28;
+  --blue: #0578AC;
+  --bright: #7de2d1;
+  --light-blue: #679436;
+  --white: #fffafb;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  position: relative;
+}
+
+.loading {
+  justify-self: center;
+  align-self: center;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+}
+.pac-target-input::placeholder {
+  color: var(--white);
+
+}

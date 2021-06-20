@@ -1,0 +1,5 @@
+DB_NAME=todo
+TOKEN=token_my_toDo
+DB_USER=postgres
+DB_PASSWORD=houseapp123
+DB_HOST=houseapp.c5uj5r0wyxvp.us-east-1.rds.amazonaws.com

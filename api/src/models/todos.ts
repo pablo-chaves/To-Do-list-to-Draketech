@@ -27,7 +27,7 @@ import {
 interface TodoAttributes {
   id: string;
   title: string;
-  status: string;
+  status: [string, string];
 }
 
 module.exports = (sequelize: any, DataTypes: any) => {
@@ -35,12 +35,10 @@ module.exports = (sequelize: any, DataTypes: any) => {
     implements TodoAttributes{
     id!: string;
     title!: string;
-    status!: string;
+    status!: [string, string];
 
     static associate(models: any) {
-      Todo.belongsToMany(models.User, {
-        through: 'ProjectAssignments'
-      })
+      Todo.belongsTo(models.User)
     }
   };
   Todo.init({
@@ -55,7 +53,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
       allowNull: false
     },
     status: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM(['unfilled', 'complete']),
       allowNull: false
     }
   }, {

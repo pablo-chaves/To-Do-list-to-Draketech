@@ -8,16 +8,13 @@ module.exports = (sequelize, DataTypes) => {
         email;
         password;
         static associate(models) {
-            User.belongsToMany(models.Todo, {
-                through: 'ProjectAssignments'
-            });
+            User.hasMany(models.Todo);
         }
     }
     ;
     User.init({
         id: {
             type: DataTypes.UUID,
-            defaultValue: sequelize_1.UUIDV4,
             allowNull: false,
             primaryKey: true
         },

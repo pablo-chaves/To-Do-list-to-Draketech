@@ -17,15 +17,12 @@ module.exports = (sequelize: any, DataTypes: any) => {
     email!: string;
     password!: string;
     static associate(models: any) {
-      User.belongsToMany(models.Todo, {
-        through: 'ProjectAssignments'
-      })
+      User.hasMany(models.Todo)
     }
   };
   User.init({
     id: {
       type: DataTypes.UUID,
-      defaultValue: UUIDV4,
       allowNull: false,
       primaryKey: true
     },

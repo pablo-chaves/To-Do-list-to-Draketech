@@ -1,10 +1,11 @@
 import { Router } from 'express';
 import user from './user';
-import postRouter from './todo';
+import todo from './todo';
+import controlToken from '../middleware/controlToken';
 
 const router = Router();
 
 router.use('/user', user);
-router.use('/todo', postRouter);
+router.use('/todo', controlToken, todo);
 
 export default router;

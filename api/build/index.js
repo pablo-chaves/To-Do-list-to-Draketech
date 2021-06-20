@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./src/app"));
 const db_1 = __importDefault(require("./src/db"));
 const PORT = process.env.PORT || 3001;
-db_1.default.sequelize.sync({ force: true }).then(async () => {
+db_1.default.sequelize.sync({ force: false }).then(async () => {
     app_1.default.listen(PORT, () => {
         console.log(`%s listening at ${PORT}`);
     });

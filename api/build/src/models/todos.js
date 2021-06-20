@@ -28,9 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         title;
         status;
         static associate(models) {
-            Todo.belongsToMany(models.User, {
-                through: 'ProjectAssignments'
-            });
+            Todo.belongsTo(models.User);
         }
     }
     ;
@@ -46,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         status: {
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM(['unfilled', 'complete']),
             allowNull: false
         }
     }, {

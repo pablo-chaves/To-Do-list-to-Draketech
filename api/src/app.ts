@@ -26,8 +26,6 @@ const corsOptions = {
 
 server.use(cors(corsOptions));
 
-
-
 // rutas
 server.use(routes);
 server.use(errorHandler);

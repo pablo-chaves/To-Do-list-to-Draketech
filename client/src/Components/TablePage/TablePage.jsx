@@ -18,7 +18,7 @@ function TablePage() {
           </tr>
         </thead>
         <tbody>
-          {todos?.reverse().map((e) => {
+          {todos?.map((e) => {
 
             return(
 

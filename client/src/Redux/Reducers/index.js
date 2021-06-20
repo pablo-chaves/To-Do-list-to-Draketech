@@ -1,17 +1,17 @@
 // actipon types
 import {
   GET_TODOS,
-  CREATE_TODO,
   UPDATE_TODO,
-  DELETE_TODO,
   LOGIN,
   REGISTER,
   GET,
+  EDIT,
 } from '../Actions/types';
 
 const initialState = {
   todos: [],
-  session: {}
+  session: {},
+  edit: {}
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -35,6 +35,11 @@ export default function rootReducer(state = initialState, action) {
     return {
       ...state,
       todos: [].concat(action.payload)
+    }
+  case EDIT:
+    return {
+      ...state,
+      edit: action.payload
     }
 
   default:

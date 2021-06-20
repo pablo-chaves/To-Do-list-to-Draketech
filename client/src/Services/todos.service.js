@@ -22,3 +22,10 @@ export async function addTodo(obj, token) {
     const task = await axios.post(endpoint, obj);
     return task.data;
 }
+
+export async function updateTodo(obj, id, token) {
+    const endpoint = `${REACT_APP_API_BASE_ENDPOINT}/todo/${id}`;
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    const task = await axios.put(endpoint, obj);
+    return task.data;
+}

@@ -3,8 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
-  withRouter,
 } from 'react-router-dom';
 
 import NavBar from './Components/NavBar/NavBar';

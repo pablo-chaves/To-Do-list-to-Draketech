@@ -11,12 +11,14 @@ import {
 import style from './ButtonOptions.module.css';
 import Swal from 'sweetalert2';
 import { deleteTodo } from '../../Services/todos.service';
-import { getTodos } from '../../Redux/Actions/index';
+import { getTodos, edit } from '../../Redux/Actions/index';
 
-function ButtonOptions({ id, buttonPath, deleteAction }) {
+function ButtonOptions({ id, buttonPath }) {
   const token = sessionStorage.getItem('token');
   const dispatch = useDispatch();
-
+  const handlerEdit = async () => {
+    await dispatch(edit(id));
+  }
   return (
     <div className={style.ctn}>
       <input type="checkbox" id={id} className={style.checkbox} />
@@ -24,10 +26,10 @@ function ButtonOptions({ id, buttonPath, deleteAction }) {
         <FontAwesomeIcon icon={faEllipsisH} />
       </label>
       <nav className={style.nav}>
-        <NavLink to={`/panel/${buttonPath}/${id}/edit`} className={style.NavLink}>
+        <span className={style.NavLink} onClick={handlerEdit}>
           <FontAwesomeIcon icon={faEdit} />
           {' Update'}
-        </NavLink>
+        </span>
         <span className={style.NavLink} onClick={() => {
           Swal.fire({
             title: 'Are you sure?',

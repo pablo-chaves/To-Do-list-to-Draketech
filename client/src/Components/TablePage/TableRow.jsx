@@ -38,7 +38,6 @@ export default function TableRow({ id, deleteAction, task, status }) {
   const handlerSubmit = async (e) => {
     e.preventDefault();
     const response = await updateTodo(editState, id, token)
-    console.log('state====', response)
     if(response.message) {
       await dispatch(getTodos(token));
       setFlag(false);

@@ -22,7 +22,6 @@ function CreateToDo() {
   const handlerSubmit = async (e) => {
     e.preventDefault();
     if(task.title) {
-      console.log('entro===',task )
       await addTodo(task, token);
       await dispatch(getTodos(token));
       setTask(obj)

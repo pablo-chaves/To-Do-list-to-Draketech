@@ -35,6 +35,7 @@ npm start
 ```
 ## Importante
 La aplicación trabaja con una base de datos en postgresQL dedicada 100% a pruebas que se encuentra deployada en AWS. Por ello es muy importante cambiar el nombre de los archivos mencionados anteriormente.
+(Adjunto diagrama de entidad relación)
 
 ## Felicitaciones, te tengo buenas noticias!
 Ya puedes disfrutar de To-Do App.

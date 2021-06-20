@@ -4,14 +4,14 @@ import * as jwt from 'jsonwebtoken';
 
 export async function login(req: any, res: any) {
   const { TOKEN } = process.env;
-  const id: string = req.body.id;
   const email: string = req.body.email;
-  const password: string = req.body.password;
-  const userDb: any = await db.User.findByPk(id);
+  const password: string = (req.body.password + '');
+  const userDb: any = await db.User.findOne({where: {email}});
   const user = userDb.dataValues;
+  const id: string = user.id;
   if(user.email === email && user.password === password) {
     const token: string = jwt.sign({id}, TOKEN);
-    res.send(token);
+    res.json({...user, token});
   } else {
     res.sendStatus(403);
   }
@@ -29,7 +29,7 @@ export async function register(req: any, res: any) {
     res.json(user);
 }
 
-export async function logout(req: any, res: any) {
-    await db.User.create(req.body)
-    res.send(req.body)
+export async function getUser(req: any, res: any) {
+    const { id } = req.params;
+    res.json(await db.User.findByPk(id));
 }

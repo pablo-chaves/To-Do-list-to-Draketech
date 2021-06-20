@@ -1,0 +1,33 @@
+.ctn {
+  width: 100%;
+}
+.link {
+  color: var(--blue);
+}
+.ctnList {
+  width: 95%;
+  margin: 15px auto;
+  background-color: var(--white);
+  text-align: justify;
+  padding: 10px;
+  box-shadow: 2px 4px 6px 3px var(--blackShadow);
+  border-radius: 5px;
+}
+
+.title {
+  margin: 0 3%;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.ctnList tr{
+  height: 40px;
+}
+.ctnList tr:hover{
+  background-color: #dadada;
+}
+.ctnList tr td{
+  padding: 15px;
+}
+.ctnList tr th{
+  padding: 15px;
+}

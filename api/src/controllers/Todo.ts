@@ -11,7 +11,7 @@ export async function getTodo(req: any, res: any) {
   if(verifyToken.id) {
     const id: string = verifyToken.id;
     let search: any = await db.Todo.findAll({where: {UserId: id}});
-    res.json({...search, verifyToken })
+    res.json(search)
   } else {
     res.sendStatus(403);
   }

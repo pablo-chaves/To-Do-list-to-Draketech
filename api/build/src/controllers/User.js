@@ -22,20 +22,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.logout = exports.register = exports.login = void 0;
+exports.getUser = exports.register = exports.login = void 0;
 const db_js_1 = __importDefault(require("../db.js"));
 const uuid_1 = require("uuid");
 const jwt = __importStar(require("jsonwebtoken"));
 async function login(req, res) {
     const { TOKEN } = process.env;
-    const id = req.body.id;
     const email = req.body.email;
-    const password = req.body.password;
-    const userDb = await db_js_1.default.User.findByPk(id);
+    const password = (req.body.password + '');
+    const userDb = await db_js_1.default.User.findOne({ where: { email } });
     const user = userDb.dataValues;
+    const id = user.id;
     if (user.email === email && user.password === password) {
         const token = jwt.sign({ id }, TOKEN);
-        res.send(token);
+        res.json({ ...user, token });
     }
     else {
         res.sendStatus(403);
@@ -49,8 +49,8 @@ async function register(req, res) {
     res.json(user);
 }
 exports.register = register;
-async function logout(req, res) {
-    await db_js_1.default.User.create(req.body);
-    res.send(req.body);
+async function getUser(req, res) {
+    const { id } = req.params;
+    res.json(await db_js_1.default.User.findByPk(id));
 }
-exports.logout = logout;
+exports.getUser = getUser;

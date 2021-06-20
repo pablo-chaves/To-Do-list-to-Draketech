@@ -4,19 +4,39 @@ import {
   CREATE_TODO,
   UPDATE_TODO,
   DELETE_TODO,
+  LOGIN,
+  REGISTER,
+  GET,
 } from '../Actions/types';
 
 const initialState = {
-  todos: []
+  todos: [],
+  session: {}
 };
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
-  case GET_TODOS:
+  case LOGIN:
     return {
       ...state,
       session: action.payload
     }
+  case REGISTER:
+    return {
+      ...state,
+      session: action.payload
+    }
+  case GET:
+    return {
+      ...state,
+      session: action.payload
+    }
+  case GET_TODOS:
+    return {
+      ...state,
+      todos: [].concat(action.payload)
+    }
+
   default:
     return state;
   }
